@@ -3,16 +3,16 @@ import Img from "../img/img1.avif";
 
 const Section2 = () => {
   return (
-    <section className="bg-blue-900">
+    <section className="bg-blue-900 px-4">
       <div className="w-full max-w-7xl mx-auto py-5">
-        <h2 className="text-7xl text-center mb-5">
+        <h2 className="text-4xl md:text-6xl text-center mb-5 font-bold">
           Free Consultations for New Patients
         </h2>
-        <p className="text-center text-3xl text-blue-400">
+        <p className="text-center text-xl md:text-3xl text-blue-400">
           Book an Appointment Today
         </p>
-        <div className="flex mt-10 justify-around">
-          <div className="w-[552px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10">
+          <div className="w-full text-center md:text-left">
             <p>
               Our dentists welcome new patients from all over the greater
               Fairfax, VA, area. Consultations are free for first-time guests of
@@ -29,16 +29,16 @@ const Section2 = () => {
               To set up an appointment, contact our Fairfax dental office
               online. You can also give our office a call at:
             </p>
-            <p className="text-center text-5xl text-blue-600 font-bold mt-[90px]">
+            <p className="text-center text-3xl md:text-5xl text-blue-600 font-bold mt-10">
               (703) 215-3878
             </p>
           </div>
-          <div className="w-[552px]">
-            <img src={Img} alt="logo" />
+          <div className="w-full flex justify-center">
+            <img src={Img} alt="logo" className="w-full max-w-[500px] rounded-lg" />
           </div>
         </div>
         <div className="flex justify-center mt-10 mb-20">
-          <button className="text-xl text-center py-5 hover:bg-blue-700 px-10 rounded-[30px] bg-blue-400">
+          <button className="text-lg md:text-xl text-center py-4 px-6 md:py-5 md:px-10 rounded-[30px] bg-blue-400 hover:bg-blue-700">
             Request a Consultation
           </button>
         </div>

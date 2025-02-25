@@ -2,20 +2,22 @@ import React from "react";
 
 const Cta = () => {
   return (
-    <div className="bg-Section-bg py-20">
+    <div className="bg-Section-bg py-16 px-4">
       <div className="w-full max-w-7xl mx-auto">
-        <div className="flex justify-center items-center">
-          <p className="text-3xl text-blue-400 mr-10">Rate, Review & Explore</p>
+        <div className="flex flex-col md:flex-row justify-center items-center gap-6">
+          <p className="text-2xl sm:text-3xl text-blue-400 text-center md:text-left">
+            Rate, Review & Explore
+          </p>
+          
           <div className="flex space-x-3">
-              <p className="bg-transparent border-blue-400 border rounded-full px-3 py-1 text-blue-400  hover:border-white text-5xl">
-                G
+            {["G", "F", "X"].map((icon, index) => (
+              <p
+                key={index}
+                className="flex items-center justify-center w-14 h-14 border-2 border-blue-400 rounded-full text-blue-400 text-3xl hover:border-white transition"
+              >
+                {icon}
               </p>
-              <p className="bg-transparent border-blue-400 border rounded-full px-4 py-1 text-blue-400  hover:border-white text-5xl">
-                F
-              </p>
-              <p className="bg-transparent border-blue-400 border rounded-full px-4 py-1 text-blue-400  hover:border-white text-5xl">
-                X
-              </p>
+            ))}
           </div>
         </div>
       </div>

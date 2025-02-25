@@ -2,13 +2,16 @@ import React from "react";
 
 const Section13 = () => {
   return (
-    <section className="bg-13bg bg-cover bg-no-repeat">
+    <section className="bg-13bg bg-cover bg-no-repeat py-16 px-4">
       <div className="w-full max-w-7xl mx-auto">
-        <div className="flex pb-40">
-          <div className="">
-            <h2 className="text-7xl mb-10 pt-20 text-center">Contact Us <br /> Today</h2>
-            
-            <form className="space-y-4 w-[600px]">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
+          {/* Kontakt form */}
+          <div className="w-full lg:w-[600px] text-center lg:text-left">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl mb-10 text-white">
+              Contact Us <br /> Today
+            </h2>
+
+            <form className="space-y-4">
               <input
                 type="text"
                 placeholder="Name"
@@ -37,13 +40,14 @@ const Section13 = () => {
             </form>
           </div>
 
-          <div className="mt-72 text-xl ml-10">
-            <h3>
+          {/* Guvohlik matni */}
+          <div className="w-full lg:w-[500px] text-white text-lg sm:text-xl lg:mt-20">
+            <h3 className="italic">
               "Let me tell you, as much as I hate dental work, Fairfax Family
               Dental Care has put my mind at ease with my fears. So, if you are
               like I was when it came to dental fears, do not worry. This is the
-              place to go to finally take care of your dental problems." - Tim
-              R.
+              place to go to finally take care of your dental problems."  
+              <span className="block mt-4 font-bold">- Tim R.</span>
             </h3>
           </div>
         </div>

@@ -14,32 +14,52 @@ const Header = () => {
     }
   }, [menuOpen]);
 
-
   return (
     <header className="py-5 bg-[#223695] relative">
       <div className="flex justify-between items-center w-full max-w-7xl mx-auto px-5">
-        <Link className="text-2xl font-bold" to="/">
-          <img src={Logo} alt="Logo" />
+        <Link className="text-5xl font-bold" to="/">
+          <img src={Logo} alt="Logo" className="w-60 md:w-full sm:w-80" />
         </Link>
 
-        <nav className="space-x-8 font-semibold text-xl text-blue-400">
+        {/* Desktop Navigation (yashirilgan) */}
+        <nav className="hidden md:flex space-x-8 font-semibold text-xl text-blue-400">
           <NavLink to="/">BLOG</NavLink>
           <NavLink to="/about">(703) 420-5374</NavLink>
           <NavLink to="/contact">LOCATION</NavLink>
           <NavLink to="/contact">CONTACT</NavLink>
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            className="hover:text-white"
-          >
-            {menuOpen ? "✖" : "MENU"}
-          </button>
         </nav>
+
+        {/* Menyu Tugmasi (hamma ekranlar uchun ko'rinadi) */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-blue-400 hover:text-white text-xl"
+        >
+          {menuOpen ? "✖" : "MENU"}
+        </button>
       </div>
 
-      {/* Dropdown Menu */}
+      {/* Dropdown Menyu (hamma ekranlar uchun ko'rinadi) */}
       {menuOpen && (
         <div className="absolute left-0 top-full w-full bg-[#223695] shadow-lg p-6 max-h-[600px] overflow-y-auto">
-          <div className="grid grid-cols-5 gap-6 text-lg">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 text-lg">
+            {/* Mobile Navigation Links (faqat mobil uchun) */}
+            <div className="md:hidden">
+              <ul className="text-blue-400 text-xl text-center space-y-4">
+                <li className="pb-8 hover:text-white border-b border-blue-300">
+                  <Link to="/">BLOG</Link>
+                </li>
+                <li className="pb-8 hover:text-white border-b border-blue-300">
+                  <Link to="/about">(703) 420-5374</Link>
+                </li>
+                <li className="pb-8 hover:text-white border-b border-blue-300">
+                  <Link to="/contact">LOCATION</Link>
+                </li>
+                <li className="pb-8 hover:text-white border-b border-blue-300">
+                  <Link to="/contact">CONTACT</Link>
+                </li>
+              </ul>
+            </div>
+
             {/* About */}
             <div>
               <h3 className="font-bold mb-10 text-center text-3xl">About</h3>
@@ -156,15 +176,6 @@ const Header = () => {
                 <li className="pb-8 hover:text-white border-b border-blue-300">
                   <Link to="/pediatric-dentistry">Pediatric Dentistry</Link>
                 </li>
-                <li className="pb-8 hover:text-white border-b border-blue-300">
-                  <Link to="/pediatric-dentistry">Pediatric Dentistry</Link>
-                </li>
-                <li className="pb-8 hover:text-white border-b border-blue-300">
-                  <Link to="/pediatric-dentistry">Pediatric Dentistry</Link>
-                </li>
-                <li className="pb-8 hover:text-white border-b border-blue-300">
-                  <Link to="/pediatric-dentistry">Pediatric Dentistry</Link>
-                </li>
               </ul>
             </div>
 
@@ -189,12 +200,11 @@ const Header = () => {
                 <li className="pb-8 hover:text-white border-b border-blue-300">
                   <Link to="/wisdom-teeth-removal">Wisdom Teeth Removal</Link>
                 </li>
-                <li className="pb-8 hover:text-white border-b border-blue-300">
-                  <Link to="/wisdom-teeth-removal">Wisdom Teeth Removal</Link>
-                </li>
               </ul>
             </div>
-            <div className="col-span-5 flex justify-center mt-6 pb-20">
+
+            {/* View All Services */}
+            <div className="col-span-1 md:col-span-5 flex justify-center mt-6 pb-20">
               <Link
                 className="text-5xl text-center text-blue-500 hover:text-white"
                 to="/all-services"
